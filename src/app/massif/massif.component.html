@@ -1,0 +1,61 @@
+<div class="container">
+  <section class="recherche massif" style="padding-top: 3%">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card" >
+          <form #f="ngForm" (ngSubmit)="getMassifRegion(f)" style="margin: 2%">
+            <div class="row">
+              <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="Rechercher en fonction de la region" autocomplete="off" ngModel name="region">
+              </div>
+              <div class="col-md-2">
+                <input type="submit" value="Rechercher" class="btn btn-primary">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="affichage massif" style="padding-top: 5%">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="row" style="padding-bottom: 0.6%" >
+          <div class="col-md-3" style="">
+            <a routerLink="/create" style="text-decoration: none;margin-left: 2.5%" class="btn btn-primary">Ajouter</a>
+          </div>
+          <div *ngIf="massifSelectionnes" class="col-md-9" style="text-align: right">
+            <p><b>{{nombreMassifSelectionnes}} ligne(s)</b></p>
+          </div>
+        </div>
+
+        <div class="card" style="margin: 1%">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <table class="table table-bordered">
+                <thead>
+                <tr >
+                  <th>Id</th>
+                  <th>Nom</th>
+                  <th>Region</th>
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let massif of massifsData; let i=index">
+                <tr>
+                  <td>{{massif?.id}}</td>
+                  <td>{{massif?.nom}}</td>
+                  <td>{{massif?.region}}</td>
+                  <td>Supprimer</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

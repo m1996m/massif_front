@@ -1,0 +1,26 @@
+<section class="Create massif">
+  <div class="container" style="padding-top: 5%">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="retour" style="padding-bottom: 0.6%">
+          <a routerLink="/" style="text-decoration: none;" class="btn btn-primary">Retout</a>
+        </div>
+        <div class="card">
+          <form #f="ngForm" (ngSubmit)="ajouter(f)" style="margin: 2px;padding-top: 2%;padding-bottom: 2%">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Saisir nom" autocomplete="off" ngModel name="nom">
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Saisir region" autocomplete="off" ngModel name="region">
+              </div>
+              <div class="col-md-12" style="padding-top: 0.7%;text-align: center">
+                <input type="submit" class="btn btn-primary" value="Ajouter">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
